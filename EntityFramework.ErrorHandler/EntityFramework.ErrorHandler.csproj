@@ -5,6 +5,7 @@
 		<Nullable>enable</Nullable>
 		<Authors>Severin Nauer</Authors>
 		<Version>0.1</Version>
+		<RepositoryUrl>https://github.com/SeverinNauer/EntityFramework.ErrorHandler</RepositoryUrl>
 	</PropertyGroup>
 
 	<ItemGroup>
