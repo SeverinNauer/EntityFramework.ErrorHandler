@@ -27,6 +27,9 @@ namespace EntityFramework.ErrorHandler
 
         public TR Handle(Func<DbError, TR> handleElse)
         {
+            if (errorHandlerConfig.Converter.Count == 0)
+                throw new InvalidOperationException("No converter registered");
+
             var error =
                     errorHandlerConfig.Converter
                     .FirstOrDefault(t => t.ShouldConvert(exception))?
