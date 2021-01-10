@@ -17,6 +17,9 @@ jobs:
       uses: actions/setup-dotnet@v1
       with:
         dotnet-version: 5.0.101
+        source-url: https://nuget.pkg.github.com/SeverinNauer/index.json
+      env: 
+        NUGET_AUTH_TOKEN: ${{secrets.GITHUB_TOKEN}}     
     - name: Restore dependencies
       run: dotnet restore
     - name: Build
@@ -24,6 +27,6 @@ jobs:
     - name: Test
       run: dotnet test --no-build --verbosity normal
     - name: Pack
-      run: dotnet pack --configuration Release EntityFramework.ErrorHandler
+      run: dotnet pack --configuration Release EntityFramework.ErrorHandler -o out
     - name: Publish
-      run: dotnet nuget push EntityFramework.ErrorHandler/bin/Release/EntityFramework.ErrorHandler.nupkg
+      run: dotnet nuget push ./EntityFramework.ErrorHandler/out/*.nupkg --skip-duplicate --no-symbols true
