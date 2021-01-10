@@ -16,6 +16,6 @@ jobs:
     - name: Setup .NET
       uses: actions/setup-dotnet@v1
       with:
-        dotnet-version: 3.1.404
+        dotnet-version: v5.0.1
     - name: Nuke Publish
       run: ./build.sh Push --NugetApiUrl "https://nuget.pkg.github.com/SeverinNauer/index.json" --NugetApiKey ${{ secrets.GITHUB_TOKEN }}
