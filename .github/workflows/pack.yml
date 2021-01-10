@@ -26,4 +26,4 @@ jobs:
     - name: Pack
       run: dotnet pack --configuration Release EntityFramework.ErrorHandler
     - name: Publish
-      run: dotnet nuget push EntityFramework.ErrorHandler/bin/Release/*.nupkg
+      run: dotnet nuget push EntityFramework.ErrorHandler/bin/Release/EntityFramework.ErrorHandler.nupkg
