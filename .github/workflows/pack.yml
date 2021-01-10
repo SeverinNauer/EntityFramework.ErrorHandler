@@ -26,4 +26,4 @@ jobs:
     - name: Pack
       run: dotnet pack --configuration Release EntityFramework.ErrorHandler -o out
     - name: Publish
-      run: dotnet nuget push ./out/*.nupkg -k ${{github.token}} -s https://nuget.pkg.github.com/SeverinNauer/index.json --skip-duplicate --no-symbols true
+      run: dotnet nuget push ./out/*.nupkg -source "github" --skip-duplicate --no-symbols true
